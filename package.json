@@ -1,15 +1,21 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "stranger-ttys",
+  "author": "bilk0h <bil.koh.sec@gmail.com> (http://bilk0h.com)",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.12.0",
+    "gray-matter": "^4.0.2",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "remark": "^12.0.0",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^11.0.1",
+    "styled-jsx": "^3.2.5"
   }
 }
