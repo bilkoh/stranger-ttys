@@ -28,9 +28,9 @@ export default function Layout({ children, home }) {
       <section className="wrapper">
         <aside>
           <section className="aboutme">
-              <h1>Stranger TTYs</h1>
-              <p>
-                <u>My name is bilk0h.</u> I was a seventeen year old hacker in the year 2000. I liked 0day, defacing websites, and dropping docs on my irc rivals. I liked power. I liked it too much. One night, I stumbled upon a strange tty of unknown origins. Upon privilege escalation, my consciousness was sucked into an unknown cyberspace and I was disconnected from my body. I was lost in oblivion. Except in 2020, I woke up, lost and confused, in the body of a thirty-six year old man. Now I'm on a mission to get back to the terminal where all this started. With my snarky robot sidekick, and a lack of modern security techniques, there's nothing that'll stop me.
+            <h1>Stranger TTYs</h1>
+            <p>
+              <u>My name is bilk0h.</u> I was a seventeen year old hacker in the year 2000. I liked 0day, defacing websites, and dropping docs on my irc rivals. I liked power. I liked it too much. One night, I stumbled upon a strange tty of unknown origins. Upon privilege escalation, my consciousness was sucked into an unknown cyberspace and I was disconnected from my body and lost to oblivion. But somehow I woke up, lost and confused, in the body of a thirty-six year old man in the year 2020. Now I'm on a mission to get back to the terminal where all this started. With my snarky robot sidekick, a lot of catching up to do, I will stop at nothing.
               </p>
           </section>
         </aside>
@@ -43,18 +43,18 @@ export default function Layout({ children, home }) {
               <li className="nav-item"><a href="https://github.com/bilkoh">Github</a></li>
             </ul>
           </header>
-          
+
           <div className="children">
             {children}
           </div>
 
           {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
-          </div>
-        )}
+            <div className={styles.backToHome}>
+              <Link href="/">
+                <a>← Back to home</a>
+              </Link>
+            </div>
+          )}
         </main>
       </section>
     </>

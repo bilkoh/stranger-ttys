@@ -1,6 +1,6 @@
 ---
 title: 'SonarQube vs OWASP Top Ten'
-excerpt: 'Feeding NodeGoat to SonarQube to see how much of the OWASP Top Ten is caught in this Static analysis tool.'
+excerpt: 'Feeding NodeGoat to SonarQube to see how much of the OWASP Top Ten is caught in this static analysis tool.'
 coverImage: '/images/cover-images/sonarqube-vs-owasptopten.png'
 date: '2020-05-23'
 ogImage:
@@ -47,3 +47,7 @@ So NodeGoat's characterization of the OWASP Top Ten goes as follows:
 10. Redirects [ `Undetected` ]
 
 So the only relevant Top Ten risks discovered by SonarQube were the eval statements that would qualify as 1 Injection, despite totally whiffing on the nosql injection in other parts of project. The ReDOS, although relevant and placed purposefully in NodeGoat, is outside of Top Ten, but good on SonarQube for finding it.
+
+
+### Summary
+So not a lot were found. I don't have enough experience with SAST to attribute this to a lack of configuration on my part in SonarQube itself, or because the source project is in Javascript, or something else. OWASP's own article on [Static Code Analysis](https://owasp.org/www-community/controls/Static_Code_Analysis) does say this class of tool is good with SQL injection detection. And I'm thinking the nosql injection vulnerabilities in NodeGoat evaded this analysis simply because it used mongodb.
