@@ -1,5 +1,6 @@
 ---
 title: 'NoSQL and urlencoded'
+excerpt: 'Discoveries on bodyParser.urlencoded unintentional impedance of nosql injection attacks'
 coverImage: '/images/cover-images/urlencoded-nosql.gif'
 date: '2020-04-30'
 ogImage:
