@@ -19,7 +19,7 @@ OWASP itself, in it's own article on [Static Code Analysis](https://owasp.org/ww
 - It found an `exec` call in the Gruntfile. Nothing doing here. 
 ![exec call](/images/sonarqube-vs-owasptopten/exec.png)
 
-- Maybe the least irrelevant , but still pretty irrelevant  were hard-coded passwords. These however were the `db-reset.js` which merely runs when setting up the project's nosql database.
+- Flagged hard-coded passwords. These however were the `db-reset.js` which merely runs when setting up the project's nosql database.
 ![hard coded passwords](/images/sonarqube-vs-owasptopten/hard-coded.png)
 
 - Another false positive was Math.random's psuedo-random generation, except for the fact that none of the psuedorandom data is used for encryption.
@@ -29,13 +29,13 @@ OWASP itself, in it's own article on [Static Code Analysis](https://owasp.org/ww
 - ReDOS stuff
 ![Regex DOS](/images/sonarqube-vs-owasptopten/redos.png)
 
-- RCE `eval` (A2 Serverside Injection)
+- RCE `eval` (Serverside Injection)
 ![RCE eval](/images/sonarqube-vs-owasptopten/rce-eval.png)
 
 ### False Negatives
 So NodeGoat's characterization of the OWASP Top Ten goes as follows:
 
-1. Injection [ `Partially Detected` ]
+1. Injection [ `Partially Detected by SonarQube` ]
 2. Broken Auth [ `Undetected` ]
 3. XSS [ `Undetected` ]
 4. Insecure Direct Object References [ `Undetected` ]
