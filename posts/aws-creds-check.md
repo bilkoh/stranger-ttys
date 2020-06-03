@@ -1,6 +1,6 @@
 ---
 title: 'aws-creds-check - a bash script'
-date: '2020-04-28'
+date: '2020-05-19'
 excerpt: 'If only the aws cli would let you call get-caller-identity with apikey and secret as arguments, I wouldn't have to write this.'
 ---
 [[Github repo]](https://github.com/bilkoh/aws-creds-check)
