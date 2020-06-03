@@ -1,6 +1,6 @@
 ---
 title: 'Hackerone CTF: Micro-CMS v2'
-excerpt: 'The trials of a harder than advertised sql injection ctf.'
+excerpt: 'The trials of a harder-than-advertised sql injection ctf.'
 coverImage: '/images/cover-images/hackerone-ctf-micro-cms-v2.jpg'
 date: '2020-06-01'
 ogImage:
