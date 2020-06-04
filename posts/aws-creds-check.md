@@ -17,5 +17,5 @@ If only the aws cli would let you call `get-caller-identity` with apikey and sec
 Usage:
   ./aws-creds-check.sh [file]
   ./aws-creds-check.sh -n [file]
-  ~~~
+~~~
   
