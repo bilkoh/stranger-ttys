@@ -50,7 +50,7 @@ And here's the statement that'll get authenticated:
 SELECT password FROM admins WHERE username='' or '0'='1' UNION ALL SELECT '1234'
 ~~~
 ![IMG4](/images/hackerone-ctf-micro-cms-v2/four.gif)
-The '0'='1' negates the first select and instead returns `1234` as the value of `password`. And it's after successful login that we are given the first flag.
+The `'0'='1'` negates the first select statement and instead returns the results of unioned select (`1234`) as the value of `password`. We have bypassed authentication and receive our Flag0.
 
 
 ## Finding Flag1
