@@ -13,8 +13,13 @@ export default function Post({ postData }) {
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/railscasts.min.css"></link>
           <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/highlight.min.js"></script>
           <title>{postData.title}</title>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@bilkohsec" />
+          <meta name="twitter:title" content={postData.title} />
+          <meta name="twitter:description" content={postData.excerpt} />
           {postData.ogImage && (
             <>
+              <meta name="twitter:image" content={"https://bilk0h.com" + postData.ogImage.url} />
               <meta property="og:image" content={"https://bilk0h.com" + postData.ogImage.url} />
             </>
           )}
