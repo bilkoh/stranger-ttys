@@ -23,7 +23,7 @@ export default function Post({ postData }) {
               <meta property="og:image" content={"https://bilk0h.com" + postData.ogImage.url} />
             </>
           )}
-          <meta name="og:title" content={siteTitle + "-" + postData.title} />
+          <meta name="og:title" content={postData.title} />
         </Head>
         <article>
           {postData.coverImage && (
