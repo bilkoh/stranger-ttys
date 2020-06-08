@@ -7,7 +7,7 @@ ogImage:
   url: '/images/cover-images/npm-dependents.jpg'
 ---
 
-npm-depedents - A script to list all packages which depend on a specific node package
+npm-dependents - A script to list all packages which depend on a specific node package
 
 [[Github repo]](https://github.com/bilkoh/npm-dependents)
 
