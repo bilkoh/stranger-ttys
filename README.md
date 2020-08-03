@@ -1,2 +1,2 @@
-A humble personal blog. [http://bilk0h.com](http://bilk0h.com)
+A humble personal blog. [https://bilk0h.com](https://bilk0h.com)
 
