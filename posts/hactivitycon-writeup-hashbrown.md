@@ -1,6 +1,6 @@
 ---
 title: 'Hacktivitycon CTF: Hashbrown Casserole'
-excerpt: 'My writeup for a scripting challenge in this year's H@cktivitycon.'
+excerpt: 'My writeup for a scripting challenge in this year\'s H@cktivitycon.'
 coverImage: '/images/cover-images/hactivitycon-writeup-hashbrown.png'
 date: '2020-8-04'
 ogImage:
