@@ -2,7 +2,7 @@
 title: 'Hacktivitycon CTF: Hashbrown Casserole'
 excerpt: 'My writeup for a scripting challenge in this year\'s H@cktivitycon.'
 coverImage: '/images/cover-images/hactivitycon-writeup-hashbrown.png'
-date: '2020-8-04'
+date: '2020-08-04'
 ogImage:
   url: '/images/cover-images/hactivitycon-writeup-hashbrown.png'
 ---
