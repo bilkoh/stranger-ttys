@@ -11,7 +11,7 @@ So hacktivitycon CTF has ended. And my team, [OpenToAll](https://opentoallctf.gi
 I ended up solving a scripting challenge by the name of `Hashbrown Casserole`. (I'm going to neatly evade the whole checksum vs hash distrinction for the sake of brevity.)
 
 Here's what I was given:
-![IMG1](/images/hactivitycon-writeup-hashbrown/prompt.gif)
+![IMG1](/images/hacktivitycon-writeup-hashbrown/prompt.gif)
 
 When I connected to the server this was the prompt:
 ~~~
