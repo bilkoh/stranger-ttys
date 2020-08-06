@@ -43,7 +43,7 @@ Though it took some time and computing power, we've got the data and send it to 
 Nope. :(
 ~~~
 
-Hmmf... Our data is int form `77971137074985976270646761813`. When turn it to binary: `b'\xfb\xf06\x82d\xab\x8e\xa7\xb2eYU'` and send it the server finally responds:
+Hmmf... Our data is int form `77971137074985976270646761813`. When we turn it to binary: `b'\xfb\xf06\x82d\xab\x8e\xa7\xb2eYU'` and send it the server finally responds:
 ~~~
 Correct.
 ~~~
@@ -55,7 +55,7 @@ Enter the data required for the first part of the sha1sum to equal hex: 17f86b
 
 The fun never stops. Now they've given us a twist. They've changed the hashing algorithm to sha1!
 
-So we've changed our script accordinly, and pattern matched for not only the partial hash but also the algorithm type. We've rewritten our function. And we've added a loop and run the script. We achieved success after to success and I watch this run and wonder when the hell we'll be given the flag. Each hash takes some time and I'm left to wonder how long this all going to take. But our script fails:
+So we changed our script accordinly, and pattern matched for not only the partial hash but also the algorithm type. We rewrote our function. And we added a loop and run the script. We achieved success after to success and I watch this run and wonder when the hell we'll be given the flag. Each hash takes some time and I'm left to wonder how long this all going to take. But our script fails:
 ~~~
 Enter the data required for the first part of the sha1sum to equal hex: 93a41
 
