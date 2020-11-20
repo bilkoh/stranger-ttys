@@ -1,6 +1,6 @@
 ---
 title: 'Set up Security Onion to monitor your Proxmox Home Lab'
-excerpt: 'The beginnings of my threat lab starts with Security Onion. Here\'s how I started with Proxmox and Open vSwitch.'
+excerpt: "The beginnings of my threat lab starts with Security Onion. Here's how I started with Proxmox and Open vSwitch."
 coverImage: '/images/cover-images/security-onion-proxmox-1.png'
 date: '2020-11-19'
 ogImage:
