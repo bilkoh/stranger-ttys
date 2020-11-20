@@ -47,7 +47,7 @@ apt install ifupdown2
 To give you an idea of what my home network looked like before adding the threat lab you can see the diagram:
 ![BEFORE_DIAGRAM](/images/security-onion-proxmox-open-vswitch/home_network_diagram_before.png)
 
-So the reason I had to switch to Open vSwitch (ovs) was because it allowed me to create a mirror (or span port) of our bridge. This mirror sends a copy of all network packets trough a different interface, which are then analyzed by Security Onion.
+So the reason I had to switch to Open vSwitch (ovs) was because it allowed me to create a mirror (or span port) of our bridge. This mirror sends a copy of all network packets through a different interface, which are then analyzed by Security Onion.
 
  This is what my `/etc/network/interfaces` looked like before I switched to ovs:
 ~~~Shell
