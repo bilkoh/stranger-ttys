@@ -7,12 +7,19 @@ ogImage:
   url: '/images/cover-images/security-onion-proxmox-1.png'
 ---
 TOC:
+
 I. [Shouts](#shouts)
+
 II. [Set the Stage](#set-the-stage)
+
 III. [The Network](#the-network)
+
 IV. [The Machine](#the-machine)
+
 V. [The Mirror](#the-mirror)
+
 VI. [What's Next](#whats-next)
+
 VII. [Reference](#reference)
 
 
@@ -199,7 +206,8 @@ Open vSwitch: 2.12.0-1
 #### Links
 Examples of how to configure your network interfaces using Open vSwitch: [https://docs.openvswitch.org/en/latest/faq/configuration/](https://docs.openvswitch.org/en/latest/faq/configuration/)
 
-Playlist for installing and using Security Onion: [https://www.youtube.com/playlist?list=PLljFlTO9rB155aYBjHw2InKkSMLuhWpxH](https://www.youtube.com/playlist?list=PLljFlTO9rB155aYBjHw2InKkSMLuhWpxH)
+Playlist for installing and using Security Onion: 
+[https://www.youtube.com/playlist?list=PLljFlTO9rB155aYBjHw2InKkSMLuhWpxH](https://www.youtube.com/playlist?list=PLljFlTO9rB155aYBjHw2InKkSMLuhWpxH)
 
 Post about mirroring and cron file to set them up on start up: [https://vext.info/2018/09/03/cheat-sheet-port-mirroring-ids-data-into-a-proxmox-vm.html#full-post](https://vext.info/2018/09/03/cheat-sheet-port-mirroring-ids-data-into-a-proxmox-vm.html#full-post)
 
