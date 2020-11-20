@@ -80,7 +80,7 @@ iface vmbr2 inet manual
         bridge-fd 0
 ~~~
 
-It took some doing but this is how the interfaces file is laid out to work with ovs and the threat vlan (vlan 10) where security onion and any other threat lab machines will reside:
+It took some doing but this is how the `/etc/network/interfaces` file is laid out to work with ovs and the threat vlan (vlan 10) where security onion and any other threat lab machines will reside:
 ~~~Shell
 iface lo inet loopback
 auto enp7s0
