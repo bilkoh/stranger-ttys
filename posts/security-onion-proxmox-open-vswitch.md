@@ -32,6 +32,8 @@ A big shout out to [Black Hills Information Security](https://www.blackhillsinfo
 
 
 ### <a name="set-the-stage"></a> Set the Stage
+We're using Open vSwitch (ovs) because it allows us to create a mirror (or span port) of our bridge. This mirror sends a copy of all network packets through an interface we plug into our Security Onion VM to be analyzed.
+
 Proxmox didn't come with Open vSwitch so I had to install it:
 ~~~Shell
 apt install openvswitch-switch ethtool
@@ -46,8 +48,6 @@ apt install ifupdown2
 ### <a name="the-network"></a> The Network
 To give you an idea of what my home network looked like before adding the threat lab you can see the diagram:
 ![BEFORE_DIAGRAM](/images/security-onion-proxmox-open-vswitch/home_network_diagram_before.png)
-
-So the reason I had to switch to Open vSwitch (ovs) was because it allowed me to create a mirror (or span port) of our bridge. This mirror sends a copy of all network packets through a different interface, which are then analyzed by Security Onion.
 
  This is what my `/etc/network/interfaces` looked like before I switched to ovs:
 ~~~Shell
