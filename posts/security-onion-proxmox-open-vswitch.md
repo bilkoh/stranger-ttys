@@ -194,6 +194,7 @@ select_all          : true
 
 In the Security Onion terminal itself, you can test by checking the output of `tcpdump -vv -i eth1`.
 
+And there you have it! Security Onion has everything it needs to get started. Check the web UI and you'll see some alerts.
 
 ### <a name="whats-next"></a>What's next?
 In the next post, I'll go over how I protect vlan with firewall rules to make sure what happens in the threat lab stays in the threat lab, and perhaps some of the beginnings of threat hunting pursuits.
