@@ -16,11 +16,11 @@ VI. [What's Next](#whats-next)
 VII. [Reference](#reference)
 
 
-### Shouts
+### <a name="shouts"></a> Shouts
 A big shout out to [Black Hills Information Security](https://www.blackhillsinfosec.com) / [Active Measures](https://www.activecountermeasures.com/). I was turned on to Security Onion by them. Most of the ideas I have for this threat lab is being generated from their content.
 
 
-### Set the Stage
+### <a name="set-the-stage"></a> Set the Stage
 Proxmox didn't come with Open vSwitch so I had to install it:
 ~~~Shell
 apt install openvswitch-switch ethtool
@@ -32,7 +32,7 @@ apt install ifupdown2
 ~~~
 ---
 
-### The Network
+### <a name="the-network"></a> The Network
 To give you an idea of what my home network looked like before adding the threat lab you can see the diagram:
 ![BEFORE_DIAGRAM](/images/security-onion-proxmox-open-vswitch/home_network_diagram_before.png)
 
@@ -131,7 +131,7 @@ Here's what the network diagram looks like now:
 ![AFTER_DIAGRAM](/images/security-onion-proxmox-open-vswitch/home_network_diagram_after.png)
 
 
-### The Machine
+### <a name="the-machine"></a> The Machine
 Security Onion is jam-packed with resource-hogging applications run in dockerized containers. I had to reserve quite a bit of resources. 200gb of storage. I gave it 12gb of ram and it hover around 90% utilization. You can check out the suggested requirements here: [https://docs.securityonion.net/en/2.3/hardware.html](https://docs.securityonion.net/en/2.3/hardware.html) I installed the EVAL version, rather than PROD because that seemed overkill.
 
 It also requires two network interfaces a management: a management and a sniffing interface.
@@ -148,7 +148,7 @@ Take note: both network devices are tagged with our vlan (10). If you're mirrori
 If you need more direction setting up and using Security Onion, there are many great resources. Check the references for a video playlist I found helpful.
 
 
-### The Mirror
+### <a name="the-mirror"></a> The Mirror
 This is the critical part. We need to use Open vSwitch set up the mirror/span port. This is the command that needs to be issued from within the proxmox terminal itself:
 
 ~~~Shell
@@ -184,11 +184,11 @@ select_all          : true
 In the Security Onion terminal itself, you can test by checking the output of `tcpdump -vv -i eth1`.
 
 
-### What's next?
+### <a name="whats-next"></a>What's next?
 In the next post, I'll go over how I protect vlan with firewall rules to make sure what happens in the threat lab stays in the threat lab, and perhaps some of the beginnings of threat hunting pursuits.
 
 
-### Reference
+### <a name="reference"></a> Reference
 #### Versions used:
 Proxmox: 6.2-15/48bd51b6 (running kernel: 5.4.65-1-pve)
 
