@@ -23,6 +23,10 @@ VI. [What's Next](#whats-next)
 VII. [Reference](#reference)
 
 
+### Intro
+I've decided to add a threat lab to my virtualized environment. I'm starting with Security Onion as the basis for this. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
+
+
 ### <a name="shouts"></a> Shouts
 A big shout out to [Black Hills Information Security](https://www.blackhillsinfosec.com) / [Active Measures](https://www.activecountermeasures.com/). I was turned on to Security Onion by them. Most of the ideas I have for this threat lab is being generated from their content.
 
