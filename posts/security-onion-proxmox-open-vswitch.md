@@ -202,6 +202,8 @@ In the next post, I'll go over how I protect vlan with firewall rules to make su
 
 ### <a name="reference"></a> Reference
 #### Versions used:
+Security Onion 2.3.2
+
 Proxmox: 6.2-15/48bd51b6 (running kernel: 5.4.65-1-pve)
 
 pfSense: 2.4.5-RELEASE-p1
