@@ -9,11 +9,17 @@ ogImage:
 Table of Contents:
 
 I. [Shouts](#shouts)
+
 II. [Set the Stage](#set-the-stage)
+
 III. [The Network](#the-network)
+
 IV. [The Machine](#the-machine)
+
 V. [The Mirror](#the-mirror)
+
 VI. [What's Next](#whats-next)
+
 VII. [Reference](#reference)
 
 
