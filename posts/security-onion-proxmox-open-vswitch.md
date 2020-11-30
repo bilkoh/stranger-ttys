@@ -6,25 +6,19 @@ date: '2020-11-19'
 ogImage:
   url: '/images/cover-images/security-onion-proxmox-1.png'
 ---
-TOC:
+Table of Contents:
 
 I. [Shouts](#shouts)
-
 II. [Set the Stage](#set-the-stage)
-
 III. [The Network](#the-network)
-
 IV. [The Machine](#the-machine)
-
 V. [The Mirror](#the-mirror)
-
 VI. [What's Next](#whats-next)
-
 VII. [Reference](#reference)
 
 
 ### Intro
-I've decided to add a threat lab to my virtualized environment. I'm starting with Security Onion as the basis for this. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
+I've decided to add a threat lab to my virtualized environment. I'm starting with Security Onion as the basis for this lab and my home network as a whole. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
 
 
 ### <a name="shouts"></a> Shouts
@@ -197,12 +191,12 @@ In the Security Onion terminal itself, you can test by checking the output of `t
 And there you have it! Security Onion has everything it needs to get started. Check the web UI and you'll see some alerts.
 
 ### <a name="whats-next"></a>What's next?
-In the next post, I'll go over how I protect vlan with firewall rules to make sure what happens in the threat lab stays in the threat lab, and perhaps some of the beginnings of threat hunting pursuits.
+In the next post, I'll go over how I test to make sure Security Onion is correctly capturing and raising alerts.
 
 
 ### <a name="reference"></a> Reference
 #### Versions used:
-Security Onion 2.3.2
+Security Onion 2.3.2 (I would have to update this 2.3.10 due to a timezone bug)
 
 Proxmox: 6.2-15/48bd51b6 (running kernel: 5.4.65-1-pve)
 
