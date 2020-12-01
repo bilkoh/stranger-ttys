@@ -6,25 +6,19 @@ date: '2020-11-19'
 ogImage:
   url: '/images/cover-images/security-onion-proxmox-1.png'
 ---
-Table of Contents:
-
-I. [Shouts](#shouts)
-
-II. [Set the Stage](#set-the-stage)
-
-III. [The Network](#the-network)
-
-IV. [The Machine](#the-machine)
-
-V. [The Mirror](#the-mirror)
-
-VI. [What's Next](#whats-next)
-
-VII. [Reference](#reference)
+### Table of Contents:
+1. [Intro](#intro)
+2. [Shouts](#shouts)
+3. [Set the Stage](#set-the-stage)
+4. [The Network](#the-network)
+5. [The Machine](#the-machine)
+6. [The Mirror](#the-mirror)
+7. [What's Next](#whats-next)
+8. [Reference](#reference)
 
 
-### Intro
-I've decided to add a threat lab to my virtualized environment. I'm starting with Security Onion as the basis for this lab and my home network as a whole. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
+### <a name="intro"></a> Intro
+This is part 1 in the series about establishing a SOC Workstation to monitor my homelab. This homelab is virtualized and in addition to supporting my home network as a whole, it will also include a threat lab we'll be adding to the mix in later sections of this series. I'm starting with Security Onion as the basis for this lab and my home network as a whole. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
 
 
 ### <a name="shouts"></a> Shouts
