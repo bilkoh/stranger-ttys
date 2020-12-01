@@ -48,7 +48,7 @@ export default function Layout({ children, home }) {
           <section className="aboutme">
             <h1>Stranger TTYs</h1>
             <p>
-              <u>My name is bilk0h.</u> I'm a security enthusiast, linux users, programmer, and a big fan of virtual machines. This blog documents my activities in those spaces that might be a contribution to others.
+              <u>My name is bilk0h.</u> I'm a security enthusiast, linux users, programmer, and a big fan of virtual machines. This blog documents the activities in those spaces that might be a contribution to others.
             </p>
           </section>
         </aside>
