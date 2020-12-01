@@ -64,7 +64,7 @@ Choose which test you'd like to run:
 ~~~
 
 Give it a minute and then check your alerts page in Security Onion. You should see results like the following:
-![tmnids results](/public/images/security-onion-proxmox-open-vswitch/tmnids-alerts.png)
+![tmnids results](/images/security-onion-proxmox-open-vswitch/tmnids-alerts.png)
 
 
 ### What's next?
