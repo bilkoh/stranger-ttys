@@ -12,7 +12,7 @@ This is the second post on a series (check out the first post [here](/posts/secu
 
 ### TCPDUMP
 We set up our span device with Open vSwitch. But does it work. First let's do a simple test with tcpdump. The results of `tcpdump -vv -i eth1` you should be capturing packets. Here you can see the packets captures from the very ssh session I launch the command from:
-~~~
+~~~Shell
 05:36:50.821537 IP (tos 0x0, ttl 127, id 25346, offset 0, flags [DF], proto TCP (6), length 104)
     10.11.1.3.57393 > onion.ssh: Flags [P.], cksum 0xc661 (correct), seq 4801:4865, ack 1193088, win 8212, length 64
 05:36:50.821620 IP (tos 0x0, ttl 127, id 25347, offset 0, flags [DF], proto TCP (6), length 40)^C
@@ -30,12 +30,12 @@ Remember that we want to sniff on the our monitoring, not our management nic.
 Now that we've confirmed that we're capturing correctly, we'll need to test if Security Onion will raise alerts. tmNIDS for is a framework, really a script, for testing network intrusion detection systems. It replays pcaps that'll trigger alerts in Security Onion. Here's the project's github repo: [https://github.com/0xtf/testmynids.org](https://github.com/0xtf/testmynids.org)
 
 Use this one liner to run this script (or download and save the shellscript):
-~~~
+~~~Shell
 curl -sSL https://raw.githubusercontent.com/0xtf/testmynids.org/master/tmNIDS -o /tmp/tmNIDS && chmod +x /tmp/tmNIDS && /tmp/tmNIDS
 ~~~
 
 So run the script, and launch all the test:
-~~~
+~~~Shell
  _             _   _ _____ _____   _____
 | |           | \ | |_   _|  __ \ / ____|
 | |_ _ __ ___ |  \| | | | | |  | | (___
