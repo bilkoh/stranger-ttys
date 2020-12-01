@@ -191,8 +191,7 @@ In the Security Onion terminal itself, you can test by checking the output of `t
 And there you have it! Security Onion has everything it needs to get started. Check the web UI and you'll see some alerts.
 
 ### <a name="whats-next"></a>What's next?
-In the next post, I'll go over how I test to make sure Security Onion is correctly capturing and raising alerts.
-
+In the next post, I'll go over how I test to make sure Security Onion is correctly capturing and raising alerts. [Check out Part 2.](/posts/security-onion-proxmox-testing)
 
 ### <a name="reference"></a> Reference
 #### Versions used:
