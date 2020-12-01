@@ -18,7 +18,7 @@ ogImage:
 
 
 ### <a name="intro"></a> Intro
-This is part 1 in the series about establishing a SOC Workstation to monitor my homelab. This homelab is virtualized and in addition to supporting my home network as a whole, it will also include a threat lab we'll be adding to the mix in later sections of this series. I'm starting with Security Onion as the basis for this lab and my home network as a whole. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
+This is part 1 in the series about establishing a SOC Workstation to monitor my homelab. This homelab is virtualized and in addition to supporting my home network as a whole, it will also include a threat lab I'll be adding to the mix in later sections of this series. I'm starting with Security Onion as the basis for this lab and my home network as a whole. It was tricky to set it up in proxmox, mostly because Security Onion requires access to a span port. So this is an outline on how I get it working.
 
 
 ### <a name="shouts"></a> Shouts
