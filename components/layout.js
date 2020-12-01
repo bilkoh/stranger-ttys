@@ -27,6 +27,8 @@ export default function Layout({ children, home }) {
               <li className="nav-item nav-item-active"><a href="/">Home</a></li>
               <li className="nav-item"><a href="/archive">Archive</a></li>
               <li className="nav-item"><a href="https://github.com/bilkoh">Github</a></li>
+              <li className="nav-item"><a href="https://twitter.com/bilkohsec">Twitter</a></li>
+              <li className="nav-item"><a href="https://github.com/bilkoh">LinkedIn</a></li>
             </ul>
           </header>
 
@@ -46,8 +48,8 @@ export default function Layout({ children, home }) {
           <section className="aboutme">
             <h1>Stranger TTYs</h1>
             <p>
-              <u>My name is bilk0h.</u> I was a seventeen year old hacker in the year 2000. I liked 0day, vulnerable IIS server, and competing with my irc rivals. I liked power. I liked it too much. One night, I stumbled upon a strange tty of unknown origins. Upon privilege escalation, my consciousness was sucked into an unknown cyberspace and I was disconnected from my body and lost to oblivion. But somehow I woke up, lost and confused, in the body of a thirty-six year old man in the year 2020. Now I'm on a mission to get back to the terminal where all this started. With my snarky robot sidekick, and a lot of catching up to do, I will stop at nothing.
-              </p>
+              <u>My name is bilk0h.</u> I'm a security enthusiast, linux users, programmer, and a big fan of virtual machines. This blog documents my activities in those spaces that might be a contribution to others.
+            </p>
           </section>
         </aside>
       </section>
