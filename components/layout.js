@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
               <li className="nav-item"><a href="/archive">Archive</a></li>
               <li className="nav-item"><a href="https://github.com/bilkoh">Github</a></li>
               <li className="nav-item"><a href="https://twitter.com/bilkohsec">Twitter</a></li>
-              <li className="nav-item"><a href="https://github.com/bilkoh">LinkedIn</a></li>
+              <li className="nav-item"><a href="https://www.linkedin.com/in/bilal-kohgadai/">LinkedIn</a></li>
             </ul>
           </header>
 
