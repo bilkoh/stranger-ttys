@@ -148,7 +148,7 @@ The sniffing interface, `eth1`, can be set to manual. Really it's just an empty 
 Here's the setup for the `onion` VM:
 ![ONION_VM_SETTINGS](/images/security-onion-proxmox-open-vswitch/onion_vm_settings.png)
 
-Take note: both network devices are tagged with our vlan (10). If you're mirroring a different bridge, say vmbr0, you would change these settings accordinly.
+Take note: both network devices are tagged with our vlan (10). If you're mirroring a different bridge, say vmbr0, you would change these settings accordingly.
 
 If you need more direction setting up and using Security Onion, there are many great resources. Check the references for a video playlist I found helpful.
 
