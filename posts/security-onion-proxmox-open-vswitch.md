@@ -33,7 +33,7 @@ Proxmox didn't come with Open vSwitch so I had to install it:
 apt install openvswitch-switch ethtool
 ~~~
 
-`ifreload -a` is a helpeful command to use when changing `/etc/network/interfaces` or altering networking settings withing proxmox web ui so I suggest installing it if you dont have it:
+`ifreload -a` is a helpeful command to use when changing `/etc/network/interfaces` or altering networking settings within proxmox web ui so I suggest installing it if you dont have it:
 ~~~Shell
 apt install ifupdown2
 ~~~
