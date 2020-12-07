@@ -1,37 +1,41 @@
 ---
-title: 'Security Onion + Proxmox Testing: Will it sniff?'
+title: 'Security Onion + Proxmox Testing: Endpoint Reporting'
 excerpt: "Part 3 in the series about establishing a SOC Workstation using Security Onion to monitor your homelab. This post is dedicated to setting up endpoint reporting on all our hosts across the network."
 coverImage: '/images/cover-images/security-onion-proxmox-3.png'
 date: '2020-12-07'
 ogImage:
   url: '/images/cover-images/security-onion-proxmox-3.png'
 ---
-### This is one post in a series!
+### Intro
 This is the third post in a series describing how to set up Security Onion to monitor your homelab (check out the first post [on setting it up](/posts/security-onion-proxmox-open-vswitch) and a second post [on testing](/posts/security-onion-proxmox-open-testing)).
 
+We're focusing on setting up firewall rules for our vlan, and endpoint agents on our hosts within our network. This is so we can generate data and alerts, not only from the sniffed traffic, but also from the hosts itself (think log analysis, file monitoring, config assesment, etc).
+
 ### Updates
-I've upgraded to Security Onion to `2.3.10`, apparently `2.3.2` had a timezone bug, and alerts were taking hours to show up. Another issue, in my journey to set this all up, was that most of the resources online (outside from the docs) were obsolete becuase they were referencing older versions of Security Onion. Apparently a lot has changed. Components have been dockerized. Configurations are applied using SaltStack. So I hope this this guide is useful to people who are trying to get started with Security Onion in Late 2020.
+I've upgraded to Security Onion to `2.3.10`, apparently the version i had installed (2.3.2) had a timezone bug, and alerts were taking hours to show up. Another issue, in my journey to set this all up, was that most of the resources online (outside from the docs) were obsolete becuase they were referencing older versions of Security Onion. Apparently a lot has changed. Components have been dockerized. Configurations are applied using SaltStack. So I hope this this guide is useful to people who are trying to get started with Security Onion in Late 2020.
 
 ### pfSense Firewall & VLANS
 Part of this project, for me, was to set up a threat lab on a vlan. This is optional for this guide, but if you're looking to add VLANs to the mix the following instructions may be useful.
 
-For reference, we have three interfaces: `WAN`, `LAN`, and the Threat Lab VLAN (`TL`). Within `LAN` is my home network, most of the proxmox infrastructure, and my own personal workstation where I will be accessing the Security Onion web gui exist on LAN, which is assigned to the 10.11.1.0/24 subnet. While Security Onion and any other VMs we spin up for the threat lab will be on the `TL` VLAN, which is on the 192.168.1.0/24 subnet and tagged under vlan 10.
+For reference, we have three interfaces: `WAN`, `LAN`, and the Threat Lab VLAN (`TL`). Within LAN is my home network, most of the proxmox infrastructure, and my own personal workstation where I will be accessing the Security Onion web gui exist on LAN, which is assigned to the 10.11.1.0/24 subnet. While Security Onion and any other VMs we spin up for the threat lab will be on the TL VLAN, which is on the 192.168.1.0/24 subnet and tagged under vlan 10.
 
-Our firewall rules are dependent on how much we expose to and from the `TL` vlan. There will be instances in which we will want `TL` to have access to the internet. E.g.: You'll want Security Onion to run its updates, or you'll want other VMs on the `TL` vlan to be able to install packages from a package manager as you set up the VM up. Consider the following use cases:
+Our firewall rules are dependent on how much we expose to and from the TL vlan. There will be instances in which we will want TL to have access to the internet. E.g.: You'll want Security Onion to run its updates, or you'll want other VMs on the TL vlan to be able to install packages from a package manager as you set up the VM up. Consider the following use cases:
 
 #### Case 1:
 - `TL` has access to the internet.
 - `TL` cannot access hosts in `LAN`.
 - `TL` can access other hosts in `TL`.
+
 ![Case 1: Firewall rules](/images/security-onion-proxmox-open-vswitch/3-firewall-rules-1.png)
 
 #### Case 2:
 - `TL` has no internet access.
 - `TL` cannot access hosts in `LAN`.
 - `TL` can access other hosts in `TL`.
+
 ![Case 2: Firewall rules](/images/security-onion-proxmox-open-vswitch/3-firewall-rules-2.png)
 
-My `LAN` rules are such that any `LAN` host is allowed inbound to `TL`. This will allow me to ssh into Security Onion, or for the endpoints on `LAN` to communicate as Wazuh, Fleet/Osquery agents to Security Onion. You can certainly apply more limiting rules on `LAN`, but I'm not going to worry about that right now.
+My LAN rules are such that any LAN host is allowed inbound to TL. This will allow me to ssh into Security Onion, or for the endpoints on LAN to communicate as Wazuh, Fleet/Osquery agents to Security Onion. You can certainly apply more limiting rules on LAN, but I'm not going to worry about that right now.
 
 ### Deploying Endpoint Agent
 You're going to want to run `so-allow` on Security Onion to allow endpoints to communicate. This was configured during the installation, but I found I had to add my networks manually anyway:
@@ -57,10 +61,11 @@ Please enter your selection:
 #### Osquery
 Osquery allows you to query your endpoints like they're object in a database. Security Onion uses `Kolid Fleet` to manage osquery and provide info about your endpoints. If you open up Fleet in Security Onion, you'll see the machine for Security Onion itself. There you can see info about your endpoints and send SQL queries to all that information.
 
-##### Installing agent
-Download the osquery from within Security Onion web gui. The package will come preconfigured to connect properly. I simply downloaded it to my workstation and used scp to upload it to a new VM I spun up running Debian 10.
+##### Installing the agent
+Download the osquery from within Security Onion web gui. Navigate to something like: `https://<security onion host>/#/downloads`. The package will come preconfigured to connect properly. I simply downloaded it to my workstation and used scp to upload it to a new VM I spun up running Debian 10.
 
 E.g.: `scp deb-launcher.deb bilk0h@192.168.1.72:/home/bilk0h`
+
 Then on the endpoint itself: `sudo dpkg -i deb-launcher.deb`
 
 Now when you open up Fleet you should see your endpoint registered (don't forget to use `so-allow` to allow access to osquery endpoint):
@@ -71,7 +76,7 @@ Check out `https://docs.securityonion.net/en/2.3/osquery.html` if you need to tr
 #### Wazuh
 Wazuh acts as our Host-based Intrusion Detection System (HIDS), and will provide us more data and alerts based, not on sniffed traffic, but on system data like logs and file hashes sent from our endpoints.
 
-##### Installing agent
+##### Installing the agent
 Here are the instructions on how to install the Wazuh agent on a diverse set on environment: `https://documentation.wazuh.com/3.9/installation-guide/installing-wazuh-agent/index.html`. But I'll briefly gloss over how I installed it on debian 10.
 ~~~Shell
 apt-get install curl apt-transport-https lsb-release gnupg2
@@ -184,5 +189,7 @@ In the next post, I'll go over setting up reporting agents on our endpoints beca
 ### Reference:
 #### Versions used:
 Security Onion 2.3.10
+
 Proxmox: 6.2-15/48bd51b6 (running kernel: 5.4.65-1-pve)
+
 pfSense: 2.4.5-RELEASE-p1
