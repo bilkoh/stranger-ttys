@@ -12,7 +12,7 @@ This is the third post in a series describing how to set up Security Onion to mo
 We're focusing on setting up firewall rules for our vlan, and endpoint agents on our hosts within our network. This is so we can generate data and alerts, not only from the sniffed traffic, but also from the hosts itself (think log analysis, file monitoring, config assesment, etc).
 
 ### Updates
-I've upgraded to Security Onion to `2.3.10`, apparently the version i had installed (2.3.2) had a timezone bug, and alerts were taking hours to show up. Another issue, in my journey to set this all up, was that most of the resources online (outside from the docs) were obsolete becuase they were referencing older versions of Security Onion. Apparently a lot has changed. Components have been dockerized. Configurations are applied using SaltStack. So I hope this this guide is useful to people who are trying to get started with Security Onion in Late 2020.
+I've upgraded to Security Onion to `2.3.10`, apparently the version I had installed (2.3.2) had a timezone bug, and alerts were taking hours to show up. Another issue, in my journey to set this all up, was that most of the resources online (outside from the docs) were obsolete becuase they were referencing older versions of Security Onion. Apparently a lot has changed. Components have been dockerized. Configurations are applied using SaltStack. So I hope this this guide is useful to people who are trying to get started with Security Onion in Late 2020.
 
 ### pfSense Firewall & VLANS
 Part of this project, for me, was to set up a threat lab on a vlan. This is optional for this guide, but if you're looking to add VLANs to the mix the following instructions may be useful.
