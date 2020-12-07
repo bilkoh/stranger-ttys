@@ -184,7 +184,7 @@ If you check the web gui for alerts, you shoul dsee a bunch of Center for Intern
 ![Wazuh Alerts](/images/security-onion-proxmox-open-vswitch/3-wazuh-alerts.png)
 
 ### What's next?
-In the next post, I'll go over setting up reporting agents on our endpoints because Host Intrusion Detection System (HIDS) we'll give us additional data to raise alerts. I'll also go over how I set up my firewall rules to protect my home network from the upcoming threat lab VLAN.
+Not sure. Just writing as I go along. Will update soon.
 
 ### Reference:
 #### Versions used:
