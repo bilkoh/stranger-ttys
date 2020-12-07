@@ -1,6 +1,6 @@
 ---
 title: 'Security Onion + Proxmox Testing: Will it sniff?'
-excerpt: "Part 2 in the series about establishing a SOC Workstation using Security Onion to monitor your homelab. In this post is dedicated to make sure Security Onion is working in a Proxmox homelab environment."
+excerpt: "Part 2 in the series about establishing a SOC Workstation using Security Onion to monitor your homelab. This post is dedicated to making sure Security Onion is working in a Proxmox homelab environment."
 coverImage: '/images/cover-images/security-onion-proxmox-2.png'
 date: '2020-12-01'
 ogImage:
