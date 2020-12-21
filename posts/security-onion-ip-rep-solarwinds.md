@@ -11,9 +11,9 @@ I'd like to start with an acknowledgement: It's almost a certainty that the atta
 
 ### What is IP Reputation?
 This is taken straight from Suricata's wiki:
-~~~
+
 The purpose of the IP reputation component is the ranking of IP Addresses within the Suricata Engine. It will collect, store, update and distribute reputation intelligence on IP Addresses.
-~~~
+
 
 ### How will we use it?
 We've got a list of low reputation IPs associated with Sunburst here: `https://github.com/bambenek/research/blob/main/sunburst/ipv4-addresses.txt` (see [Github Repo](https://github.com/bambenek/research/tree/main/sunburst) for more info).
@@ -27,7 +27,7 @@ Knowing which file to edit and which file to leave for salt to handle is not alw
 
 Note: `onion_eval` is a reflection of $SENSORNAME_$ROLE. So this file name will be different on your set up depending on your sensor name and role.
 
-### Configs and File we'll add
+### Configs / Category & IP Lists
 #### Adding IPREP to Suricata configs
 Edit `/opt/so/saltstack/local/pillar/minions/onion_eval.sls`. And add this to the bottom of the file:
 ~~~YAML
@@ -42,7 +42,7 @@ suricata:
 Note: that the above paths are where I'll files will be put within the suricata docker
 
 Let's create these file within our onion machine
-~~~
+~~~Shell
 mkdir /opt/so/conf/suricata/iprep
 cd /opt/so/conf/suricata/iprep
 touch categorylist.txt
@@ -51,22 +51,20 @@ touch testing.txt
 chown suricata: -R ./
 ~~~
 
-#### Categories List 
-([docs](https://suricata.readthedocs.io/en/suricata-4.1.4/reputation/ipreputation/ip-reputation-format.html#categories-file))
-categorylist.txt
-~~~
+#### categorylist.txt
+~~~Shell
 1,sunburst,Known Sunburst IP
 2,test,Testing IPREP
 ~~~
 Follows format: `<id>,<short name>,<description>`
+([Suricata docs](https://suricata.readthedocs.io/en/suricata-4.1.4/reputation/ipreputation/ip-reputation-format.html#categories-file))
 
-#### Reputation files 
-([docs](https://suricata.readthedocs.io/en/suricata-4.1.4/reputation/ipreputation/ip-reputation-format.html#reputation-file))
-##### testing.txt:
-~~~
+#### testing.txt
+~~~Shell
 192.168.1.71,2,10
 ~~~
 Follows format: `<ip>,<category>,<reputation score>`
+([Suricata docs](https://suricata.readthedocs.io/en/suricata-4.1.4/reputation/ipreputation/ip-reputation-format.html#reputation-file))
 
 ##### sunburst.txt:
 Use this one-liner to add category id and reputation score to flat ip list we got from [bambenek's sunburst research](https://github.com/bambenek/research/tree/main/sunburst).
@@ -76,8 +74,8 @@ curl https://raw.githubusercontent.com/bambenek/research/main/sunburst/ipv4-addr
 I also appended another machine on my network to test `sunburst.txt`.
 
 ### Adding Rules 
-Edit `/opt/so/saltstack/local/salt/idstools/local.rules` to add our iprep rules ([iprep keyworddocs](https://suricata.readthedocs.io/en/suricata-4.1.4/rules/ip-reputation-rules.html))
-~~~
+Edit `/opt/so/saltstack/local/salt/idstools/local.rules` to add our iprep rules ([iprep keyword docs](https://suricata.readthedocs.io/en/suricata-4.1.4/rules/ip-reputation-rules.html))
+~~~Shell
 # Custom Suricata rules go in this file
 alert ip any any -> any any (msg:"IPREP LOW - Sunburst"; iprep:src,sunburst,<,11; sid:1996611; rev:1;)
 alert ip any any -> any any (msg:"IPREP LOW - Sunburst"; iprep:dst,sunburst,<,11; sid:1996612; rev:1;)
@@ -93,7 +91,7 @@ alert ip any any -> any any (msg:"IPREP HIGH - Testing"; iprep:dst,test,<,11; si
 So the above rules will raise alerts on any of the ips in our `sunburst` or `test` category, either as src or dst, if those ips had a reputation under 11.
 
 ### Back to Docker
-Though we've saved these files in our onion machine, none of them are actually in the suricata docker container. In order to get them there we need to bind the files we created to the suricata container.
+Though we've saved these files in our onion machine, none of them are actually in the suricata docker container. In order to get them there we need to bind the files we created earlier to the suricata container.
 
 We'll have to open `/opt/so/saltstack/default/salt/suricata/init.sls`. In the `so-suricata` section look for a list of `binds`. It'll be under a format like `[path1]:[path2]:[ro|rw]`.
 
@@ -132,14 +130,14 @@ so-suricata:
 ~~~
 
 We run the following to initiate reloading changes restart suricata:
-~~~
+~~~Shell
 salt-call state.highstate; so-rule-update; salt onion_eval state.apply suricata; so-suricata-restart
 ~~~
 
 Run `docker exec so-suricata find /etc/suricata` in your onion machine to check if the `iprep` has been bound correctly.
 
 You should see the iprep directory added:
-~~~
+~~~Shell
 [root@onion iprep]# docker exec so-suricata find /etc/suricata
 /etc/suricata
 /etc/suricata/classification.config
