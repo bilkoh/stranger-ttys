@@ -184,7 +184,7 @@ If you check the web gui for alerts, you shoul dsee a bunch of Center for Intern
 ![Wazuh Alerts](/images/security-onion-proxmox-open-vswitch/3-wazuh-alerts.png)
 
 ### What's next?
-We're going to set up alerts using IP Reputation and suricata to alert us to activity from IPs deemed untrustworthy. [Check out Part 3.](/posts/security-onion-ip-rep-solarwinds)
+We're going to set up alerts using IP Reputation and suricata to alert us to activity from IPs deemed untrustworthy. [Check out Part 4.](/posts/security-onion-ip-rep-solarwinds)
 
 ### Reference:
 #### Versions used:

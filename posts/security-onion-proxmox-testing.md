@@ -68,4 +68,4 @@ Give it a minute and then check your alerts page in Security Onion. You should s
 
 
 ### What's next?
-In the next post, I'll go over setting up reporting agents on our endpoints because Host Intrusion Detection System (HIDS) we'll give us additional data to raise alerts. I'll also go over how I set up my firewall rules to protect my home network from the upcoming threat lab VLAN. [Check it out here](/posts/security-onion-proxmox-endpoints)
+In the next post, I'll go over setting up reporting agents on our endpoints because Host Intrusion Detection System (HIDS) we'll give us additional data to raise alerts. I'll also go over how I set up my firewall rules to protect my home network from the upcoming threat lab VLAN. [Check Part 3 here](/posts/security-onion-proxmox-endpoints)
