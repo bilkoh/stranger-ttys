@@ -159,6 +159,11 @@ You should see the iprep directory added:
 I pinged between two host within my network. One that was added to our sunburst iprep list, and the other to the testing iprep list. And this is what my alerts page looks like:
 ![test iprep alerts](/images/security-onion-proxmox-open-vswitch/4-iprep-alerts.png)
 
+### Leveraging Threat Intel to give us better alerts
+There are Threat Intel database like, [CINS Score](http://cinsscore.com/), that use their resources to develop ips of bad actors and publish them for free. See: `http://cinsscore.com/list/ci-badguys.txt`
+
+We can add more reputation lists and alerts, as we did above, to keep our networks safer and improve visability over our networks.
+
 ### What's next?
 Not sure. Just writing as I go along. Will update soon.
 
