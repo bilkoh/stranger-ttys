@@ -66,7 +66,7 @@ The only data we can get from the database seems to be either an error when we c
 So how do we retrieve the credentials?
 
 #### Double Query Injection
-They key to this technique is the `GROUP BY` modifier. When combined with the aggregate function like count(*) we produce a `Duplicate entry` error that outputs the data we select for.
+The key to this technique is the `GROUP BY` modifier. When combined with the aggregate function like count(*) we produce a `Duplicate entry` error that outputs the data we select for.
 
 This looks complicated, but let's make it easier to parse visually:
 ~~~SQL
