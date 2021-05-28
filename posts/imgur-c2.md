@@ -1,6 +1,6 @@
 ---
 title: 'Imgur C2'
-excerpt: 'A tool to smuggle binaries through Imgur, allowing a botmaster to send binaries to victims without the victims needing to find the controller\'s domain or ip.'
+excerpt: "A tool to smuggle binaries through Imgur, allowing a botmaster to send binaries to victims without the victims needing to find the controller's domain or ip."
 coverImage: '/images/cover-images/imgur-c2.jpg'
 date: '2021-05-028'
 ogImage:
