@@ -7,7 +7,9 @@ ogImage:
   url: '/images/cover-images/imgur-c2.jpg'
 ---
 
-# IMGUR C2
+# REPO
+[https://github.com/bilkoh/imgur_c2](https://github.com/bilkoh/imgur_c2)
+
 ## What is it?
 Some scripts to send and receive binaries from a botnet operator to a victim node.
 
@@ -32,6 +34,8 @@ Run to find valid tag:
     `python3 cli.py -i not_evil.png -o evil.exe`
 
 ## How do I install it?
+`git clone https://github.com/bilkoh/imgur_c2.git`
+`cd imgur_c2`
 `pip install -r requirements.txt `
 
 ## Notes:
