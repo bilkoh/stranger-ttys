@@ -17,8 +17,6 @@ export default function Layout({ children, home }) {
           content="Learn how to build a personal website using Next.js"
         />
 
-        <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101260088);</script>
-        <script async src="//static.getclicky.com/js"></script>
       </Head>
       <section className="wrapper">
         <main className="content">
