@@ -17,5 +17,8 @@
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.2",
     "styled-jsx": "^3.2.5"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
