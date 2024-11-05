@@ -71,8 +71,9 @@ def predict_next_word(model, words, vocabulary):
 # user input will be the first 3 word and output will be the final word
 words = ['Read', 'between', 'the']
 
+print("Idiom:", " ".join(words),"...")
 final_word = predict_next_word(model, words, vocabulary)
-print("Predicted word:", final_word)
+print("Prediction:", final_word)
 ```
 
 ### Test it for yourself
