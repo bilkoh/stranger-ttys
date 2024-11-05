@@ -1,6 +1,6 @@
 ---
 title: 'Finish. That. Idiom. NLP exercise'
-excerpt: "Just publishing my results for discrete math homework."
+excerpt: "A project to build a simple NLP model that predicts the next word in an idiom, based on first three words."
 coverImage: '/images/cover-images/nlp-finish-that-idiom.svg'
 date: '2024-11-04'
 ogImage:
