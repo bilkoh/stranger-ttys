@@ -1,0 +1,45 @@
+<svg width="681" height="447"
+    xmlns="http://www.w3.org/2000/svg" style="background-color:#0D1117;">
+    <!-- Neural Network Nodes and Connections -->
+    <!-- Input layer nodes -->
+    <circle cx="100" cy="120" r="10" fill="#FFFFFF" />
+    <circle cx="100" cy="220" r="10" fill="#00FF00" />
+    <circle cx="100" cy="320" r="10" fill="#FFFFFF" />
+
+    <!-- Hidden layer nodes with glitchy effects -->
+    <circle cx="340" cy="100" r="12" fill="#00FF00" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="340" cy="200" r="12" fill="#FFFFFF" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="340" cy="300" r="12" fill="#00FF00" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.5;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Output layer node with emphasis -->
+    <circle cx="580" cy="220" r="16" fill="#FFFFFF" stroke="#00FF00" stroke-width="3">
+        <animate attributeName="r" values="16;20;16" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Connections between nodes -->
+    <line x1="110" y1="120" x2="328" y2="100" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="110" y1="120" x2="328" y2="200" stroke="#00FF00" stroke-width="1.5" opacity="0.5" />
+    <line x1="110" y1="220" x2="328" y2="200" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="110" y1="220" x2="328" y2="300" stroke="#00FF00" stroke-width="1.5" opacity="0.5" />
+    <line x1="110" y1="320" x2="328" y2="200" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="110" y1="320" x2="328" y2="300" stroke="#00FF00" stroke-width="1.5" opacity="0.5" />
+    <line x1="352" y1="100" x2="568" y2="220" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+    <line x1="352" y1="200" x2="568" y2="220" stroke="#00FF00" stroke-width="1.5" opacity="0.5" />
+    <line x1="352" y1="300" x2="568" y2="220" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+
+    <!-- Glitchy text to represent the idiom and prediction -->
+    <text x="20" y="400" font-family="monospace" font-size="24" fill="#00FF00" opacity="0.8">
+    Read between the
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1s" repeatCount="indefinite" />
+    </text>
+    <text x="380" y="400" font-family="monospace" font-size="24" fill="#FFFFFF" stroke="#00FF00" stroke-width="1">
+    lines
+        <animate attributeName="stroke-width" values="1;2;1" dur="1.2s" repeatCount="indefinite" />
+    </text>
+</svg>
